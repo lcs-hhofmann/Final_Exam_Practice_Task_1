@@ -23,17 +23,36 @@ import PlaygroundSupport
 
 // Create a canvas object to use
 let canvas = Canvas(width: 400, height: 600)
+//
+//// Begin your solution here...
+//
+//// REMINDER: here's how to create a square with a fill
+//canvas.fillColor = Color(hue: 56, saturation: 7, brightness: 56, alpha: 100)
+//canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 50, height: 50)
 
-// Begin your solution here...
+//background
+canvas.fillColor = Color.init(hue: 191, saturation: 100, brightness: 85, alpha: 100)
+canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 400, height: 600)
 
-// REMINDER: here's how to create a square with a fill
-canvas.fillColor = Color(hue: 56, saturation: 7, brightness: 56, alpha: 100)
-canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 50, height: 50)
+//dates and time
+canvas.drawText(message: "saturday                                     mandela hall                                special guest", size: 10, x: 20, y: 560, kerning: -0.5)
+canvas.drawText(message: "october 16 1993 / 8 pm           at unversity of sussex               salad, plus my life story", size: 10, x: 20, y: 552, kerning: -0.5)
+canvas.drawText(message: "                                                                                                              £6.50 / £5.30 in advance", size: 10, x: 20, y: 535, kerning: -0.5)
 
-// REMINDER: here's how to create text in a certain location
-canvas.drawText(message: "blur", size: 96, x: 100, y: 150, kerning: 0)
-// HINT: You can use the kerning property to change the distance between letters
-//       Try adjusting the value to positive or negative values. What happens?
+
+//words
+canvas.drawText(message: "blur", size: 200, x: 10, y: 290, kerning: 0)
+
+//blurred affect
+canvas.textColor = Color.init(hue: 0, saturation: 0, brightness: 0, alpha: 15)
+
+for y in stride(from: 310, to: -60, by: -7) {
+canvas.drawText(message: "blur", size: 200, x: 10, y: y, kerning: 0)
+}
+
+
+//// HINT: You can use the kerning property to change the distance between letters
+////       Try adjusting the value to positive or negative values. What happens?
 
 /*:
  **Remember to commit and push your work,please**.
